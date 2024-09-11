@@ -25,7 +25,7 @@
     "editorType": [
       "figma"
     ],
-    "id": "dice-imagen-creator",
+    "id": "dice-imagen-figma",
     "name": "DICE ImaGen Creator",
     "main": "src/main.ts",
     "ui": "src/ui.tsx"

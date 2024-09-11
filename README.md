@@ -1,4 +1,4 @@
-# Imagen Figma Plugin
+# ImaGen Figma Plugin
 This is the repository for the Imagen Figma Plugin.
 
 This is a Figma plugin that allows you to export Figma layers as ImaGen-compatible templates. (.dicetemplate files)
