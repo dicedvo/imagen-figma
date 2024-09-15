@@ -1,0 +1,40 @@
+name: Daily Figma Plugin Release
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build plugin
+        run: npm run build
+
+      - name: Create zip file
+        run: zip -r figma-plugin.zip build
+
+      - name: Create Release
+        id: create_release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          title: Latest Release ${{ github.run_number }}
+          automatic_release_tag: latest-${{ github.run_number }}
+          prerelease: true
+          files: ./figma-plugin.zip
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
