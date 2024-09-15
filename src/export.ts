@@ -1,6 +1,7 @@
 import { ExportableBytes, filenameify, toAssetURL } from "./common-utils";
 import { RawTemplateElement } from "./elements";
 import { TEMPLATE_FORMAT_VERSION, TemplateMetadata } from "./template";
+import { TextEncoder } from "@sinonjs/text-encoding";
 
 async function exportAssets(
   exportables: ExportableBytes[],

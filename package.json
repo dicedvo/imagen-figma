@@ -3,6 +3,7 @@
     "@create-figma-plugin/ui": "^3.2.0",
     "@create-figma-plugin/utilities": "^3.2.0",
     "@polkadot/x-textencoder": "^13.0.2",
+    "@sinonjs/text-encoding": "^0.7.3",
     "@types/jszip": "^3.4.1",
     "change-case": "^5.4.4",
     "immer": "^10.1.1",
