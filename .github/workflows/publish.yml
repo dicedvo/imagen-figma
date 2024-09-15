@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    paths-ignore:
+      - "**/*.md"
   workflow_dispatch:
 
 permissions:
@@ -29,7 +31,7 @@ jobs:
         run: npm run build
 
       - name: Create zip file
-        run: zip -r figma-plugin.zip build/*
+        run: zip -r figma-plugin.zip manifest.json build
 
       - name: Create Release
         id: create_release
